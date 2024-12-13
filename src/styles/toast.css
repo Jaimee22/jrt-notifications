@@ -1,0 +1,75 @@
+/* styles/toast.css - Styled to match React Toastify */
+.jrt-toast {
+  position: fixed;
+  z-index: 9999;
+  padding: 20px 50px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: rgb(69, 69, 69);
+}
+
+.jrt-toast-top-right {
+  top: 1rem;
+  right: 1rem;
+}
+
+.jrt-toast-top-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.jrt-toast-bottom-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.jrt-toast-bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.jrt-toast-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.jrt-toast-error {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.jrt-toast-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.jrt-toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 80px;
+  animation: jrt-progress linear;
+}
+
+.jrt-toast-icon{
+  margin-right: 0.5rem;
+  
+}
+
+@keyframes jrt-progress {
+  from {
+      width: 100%;
+  }
+  to {
+      width: 0%;
+  }
+}
