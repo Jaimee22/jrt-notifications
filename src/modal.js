@@ -5,14 +5,14 @@ import errorIcon from './assets/icons/error-fino.svg';
 export function showModal({
   title = 'Alerta',
   message = '',
-  confirmText = 'Aceptar',
-  cancelText = 'Cancelar',
+  confirmText = null, // Ahora null por defecto para hacerlo opcional
+  cancelText = null,
   icon = '',
-  iconColor = '#000', // Color dinámico para el icono
+  iconColor = '#000',
   onConfirm,
   onCancel,
+  time = null, // Nuevo parámetro opcional
 }) {
-  // Definir los SVG de los iconos como cadenas
   const icons = {
     alert: `
       <svg width="86px" height="86px" viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,27 +42,37 @@ export function showModal({
   const modal = document.createElement('div');
   modal.className = 'jrt-modal';
 
-  // Insertar el icono correspondiente si se pasa
   const iconHTML = icon && icons[icon] ? icons[icon] : '';
+
+  // Botones condicionales
+  let buttonsHTML = '';
+  if (cancelText) {
+    buttonsHTML += `<button class="jrt-modal-btn jrt-modal-cancel">${cancelText}</button>`;
+  }
+  if (confirmText) {
+    buttonsHTML += `<button class="jrt-modal-btn jrt-modal-confirm">${confirmText}</button>`;
+  }
 
   modal.innerHTML = `
     ${iconHTML}
     <h2 class="jrt-modal-title">${title}</h2>
     <p class="jrt-modal-message">${message}</p>
     <div class="jrt-modal-buttons">
-      ${cancelText ? `<button class="jrt-modal-btn jrt-modal-cancel">${cancelText}</button>` : ''}
-      <button class="jrt-modal-btn jrt-modal-confirm">${confirmText}</button>
+      ${buttonsHTML}
     </div>
   `;
 
   overlay.appendChild(modal);
   document.body.appendChild(overlay);
 
-  // Event listeners
-  modal.querySelector('.jrt-modal-confirm').onclick = () => {
-    if (onConfirm) onConfirm();
-    overlay.remove();
-  };
+  // Listeners condicionales
+  const confirmButton = modal.querySelector('.jrt-modal-confirm');
+  if (confirmButton) {
+    confirmButton.onclick = () => {
+      if (onConfirm) onConfirm();
+      overlay.remove();
+    };
+  }
 
   const cancelButton = modal.querySelector('.jrt-modal-cancel');
   if (cancelButton) {
@@ -70,5 +80,12 @@ export function showModal({
       if (onCancel) onCancel();
       overlay.remove();
     };
+  }
+
+  // Cierre automático si se proporciona `time`
+  if (time && typeof time === 'number') {
+    setTimeout(() => {
+      overlay.remove();
+    }, time);
   }
 }

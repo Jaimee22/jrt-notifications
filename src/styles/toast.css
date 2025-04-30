@@ -25,6 +25,12 @@
   left: 1rem;
 }
 
+.jrt-toast-top-center {
+  top: 1rem;            
+  left: 50%;            
+  transform: translateX(-50%);
+}
+
 .jrt-toast-bottom-right {
   bottom: 1rem;
   right: 1rem;
@@ -33,6 +39,11 @@
 .jrt-toast-bottom-left {
   bottom: 1rem;
   left: 1rem;
+}
+
+.jrt-toast-bottom-center {
+  bottom: 1rem;         
+  transform: translateX(-50%);
 }
 
 .jrt-toast-success {
@@ -58,6 +69,8 @@
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 80px;
   animation: jrt-progress linear;
+  margin-left: 6px;
+  max-width: 96% !important;
 }
 
 .jrt-toast-icon{
