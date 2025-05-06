@@ -1,8 +1,6 @@
 import './styles/modal.css';
-import alertIcon from './assets/icons/alert.svg';
-import errorIcon from './assets/icons/error-fino.svg';
 
-export function showModal({
+export default function showModal({
   title = 'Alerta',
   message = '',
   confirmText = null, // Ahora null por defecto para hacerlo opcional

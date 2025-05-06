@@ -1,18 +1,32 @@
 {
   "name": "jrt-notifications",
-  "version": "1.0.4",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.9",
+  "description": "Librería de notificaciones con toasts y modals",
+  "main": "dist/jrt-notifications.js",
+  "module": "dist/jrt-notifications.esm.js",
+  "style": "dist/styles.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "type": "module",
   "scripts": {
     "build": "rollup --config",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "notifications",
+    "toast",
+    "modal"
+  ],
+  "author": "JR",
+  "license": "MIT",
   "devDependencies": {
     "rollup": "^2.79.2",
     "rollup-plugin-css-only": "^4.5.2",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-commonjs": "^25.0.7"
   }
 }

@@ -1,0 +1,181 @@
+/* styles/toast.css - Styled to match React Toastify */
+.jrt-toast {
+  position: fixed;
+  z-index: 9999;
+  padding: 20px 50px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: rgb(69, 69, 69);
+}
+
+.jrt-toast-top-right {
+  top: 1rem;
+  right: 1rem;
+}
+
+.jrt-toast-top-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.jrt-toast-top-center {
+  top: 1rem;            
+  left: 50%;            
+  transform: translateX(-50%);
+}
+
+.jrt-toast-bottom-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.jrt-toast-bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.jrt-toast-bottom-center {
+  bottom: 1rem;         
+  transform: translateX(-50%);
+}
+
+.jrt-toast-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.jrt-toast-error {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.jrt-toast-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.jrt-toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 80px;
+  animation: jrt-progress linear;
+  margin-left: 6px;
+  max-width: 96% !important;
+}
+
+.jrt-toast-icon{
+  margin-right: 0.5rem;
+  
+}
+
+@keyframes jrt-progress {
+  from {
+      width: 100%;
+  }
+  to {
+      width: 0%;
+  }
+}
+
+/* Overlay */
+.jrt-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Más oscuro para mayor contraste */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Modal Container */
+.jrt-modal {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+  width: 400px; /* Tamaño fijo para consistencia */
+  max-width: 90%; /* Ajustable en pantallas más pequeñas */
+  font-family: 'Arial', sans-serif; /* Fuente más genérica */
+}
+
+/* Modal Title */
+.jrt-modal-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  color: #545454; /* Gris oscuro para un diseño más limpio */
+  margin-bottom: 15px;
+}
+
+/* Modal Message */
+.jrt-modal-message {
+  margin: 0 0 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #6c757d; /* Texto secundario */
+}
+
+/* Button Container */
+.jrt-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Espaciado entre botones */
+  margin-top: 20px;
+}
+
+/* General Button Style */
+.jrt-modal-btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Confirm Button */
+.jrt-modal-confirm {
+  background: #3085d6; /* Azul SweetAlert2 */
+  color: #fff;
+}
+.jrt-modal-confirm:hover {
+  background: #2874c7;
+}
+.jrt-modal-confirm:active {
+  transform: scale(0.95);
+}
+
+/* Cancel Button */
+.jrt-modal-cancel {
+  background: #aaa; /* Gris SweetAlert2 */
+  color: #fff;
+}
+.jrt-modal-cancel:hover {
+  background: #999;
+}
+.jrt-modal-cancel:active {
+  transform: scale(0.95);
+}
+
+.jrt-modal-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+

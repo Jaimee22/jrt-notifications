@@ -1,6 +1,6 @@
 import './styles/toast.css';
 
-export function showToast({
+export default function showToast({
   message,
   duration = 3000,
   position = 'top-right',

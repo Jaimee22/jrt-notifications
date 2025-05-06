@@ -15,7 +15,7 @@ export default {
     },
   ],
   plugins: [
-    css({ output: 'dist/styles.css' }), // Extrae el CSS
+    css({ output: 'styles.css' }), // Extrae el CSS
     terser(), // Minifica el código
   ],
 };
